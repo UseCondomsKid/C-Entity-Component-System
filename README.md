@@ -6,10 +6,10 @@ This ecs is largely inspired from this ecs by Dylan Flaconer
 Link: https://gitlab.com/Falconerd/ember-ecs
 
 #### How to compile
-This ecs is simply two files [ecs.h](ecs.h) and [ecs.c](ecs.c).
+This ecs is simply two files [ecs.h](src/ecs/ecs.h) and [ecs.c](src/ecs/ecs.c).
 Just add them to your project and include them, nothing crazy here.
 #### How to use
-Just include [ecs.h](ecs.h) in your project.
+Just include [ecs.h](src/ecs/ecs.h) in your project.
 All the code is commented, so it should give you an idea of how it all works.
 Below is an example of how to use the module.
 ##### Creating components
@@ -34,7 +34,7 @@ typedef struct character_component
 ```
 `u8` is a `uint8_t` unsigned 8 bit integer.
 ##### Initializing the ECS
-We use the 2 functions belwo to initialize the ecs, check [ecs.h](ecs.h) for their documentaion.
+We use the 2 functions belwo to initialize the ecs, check [ecs.h](src/ecs/ecs.h) for their documentaion.
 Initializing the ecs will allocate memory for the components and the entities.
 ```c
 ecs_init(2, sizeof(Position_Component), sizeof(Character_Component));
@@ -45,7 +45,7 @@ The ids are used to reference the components when querying or when getting a com
 
 ##### Creating systems for the components
 Systems query for entities that have the specified components, we'll create 2 example systems.
-To query we use the function `ecs_query()`, check [ecs.h](ecs.h) for further documentation.
+To query we use the function `ecs_query()`, check [ecs.h](src/ecs/ecs.h) for further documentation.
 - Position system
 ```c
 void position_system(void)
@@ -92,7 +92,7 @@ u32 entity1 = ecs_create_entity();
 u32 entity2 = ecs_create_entity();
 ```
 ##### Adding components to entities
-Adding components to entities is also straight forward, you just use this function `ecs_add_component()` (again, check out [ecs.h](ecs.h) for more).
+Adding components to entities is also straight forward, you just use this function `ecs_add_component()` (again, check out [ecs.h](src/ecs/ecs.h) for more).
 ```c
 // Adding a position component to entity1
 Position_Component position = { .x = 100, .y = -50 };
