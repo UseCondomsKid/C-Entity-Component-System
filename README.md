@@ -2,7 +2,7 @@
 
 #### A simple ecs writen in c99.
 ---
-This ecs is largely inspired from this ecs by Dylan Flaconer
+This is my simple implementation of an ecs in c, it is largely inspired from this ecs by Dylan Flaconer
 Link: https://gitlab.com/Falconerd/ember-ecs
 
 #### How to compile
